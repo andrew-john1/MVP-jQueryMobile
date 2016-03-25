@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mijn boodschappen lijstje</title>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- jQuery css -->
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+
+	<!-- jQuery script -->
+	<script src="jquery/jquery-1.12.2.min.js"></script>
+
+	<script>
+	    $(document).bind('mobileinit',function(){
+	        $.mobile.pushStateEnabled = false;
+	    });
+	</script> 
+
+	<script src="app.js"></script
+
+	<!-- jQuery Mobile script -->
+	<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<header data-role="header">
+			<h1>Mijn boodschappen lijstje</h1>
+		</header>
+		<div data-role="content">
+			<ul id="items" data‐role="listview" data‐inset="true" data-filter="true"></ul> <br>
+		</div>
+		<footer data-role="footer" data-position="fixed">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#add" data-icon="plus">Add</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
+	<div data-role="page" id="add">
+		<header data-role="header" data-add-back-btn="true">
+			<h1>Voeg een item toe</h1>
+		</header>
+		<div data-role="content">
+			<input type="text" name="item" placeholder="Add an item.." onchange="add();">
+		</div>
+		<footer data-role="footer" data-position="fixed">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#add" data-icon="plus">Add</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
+	<div data-role="page" id="detail">
+		<header data-role="header" data-add-back-btn="true">
+			<h1 class="detailTitle"></h1>
+		</header>
+		<div data-role="content">
+			<input type="text" name="update" placeholder="Update" onchange="update();">
+			<ul id="notes" data‐role="listview" data‐inset="true"></ul>
+			<button data-icon="delete" class="delete">Delete</button>
+		</div>
+	</div>
+</body>
